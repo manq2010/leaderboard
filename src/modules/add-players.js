@@ -1,15 +1,25 @@
-import Leader from './player.js';
+// import Leader from './player.js';
+import Players from './get-player.js';
 
-const clearCompleted = document.querySelector('.clear-completed');
+// const clearCompleted = document.querySelector('.clear-completed');
 
-const addPlayer = () => {
-    const liMarkup = `
-          <li class="player-details">
-          <p>${Leader.name}: ${Leader.score}</p>
-          </li>
-          `;
 
-    clearCompleted.insertAdjacentHTML('beforebegin', liMarkup);
+
+const addPlayerToLocalStorage = (player) => {
+    console.log(player, 'local storage');
+    const players = Players.getPlayers();
+    players.push(player);
+    localStorage.setItem('players', JSON.stringify(players));
 };
 
-export default addPlayer;
+const addPlayer = (player) => {
+    // const player = new Leader(name, score);
+    console.log(player);
+    // addPlayerToLocalStorage(player);
+    // return name;
+};
+
+
+
+export { addPlayer };
+export default addPlayerToLocalStorage;

@@ -19,11 +19,11 @@
     <section class="scores-container">
       <div class="refresh-container">
         <h3 class="refresh-title">Recent scores</h3>
-        <button type="button" class="refresh-btn"></button>
+        <button type="button" class="refresh-btn">Refresh</button>
       </div>
 
       <div class="display-scores">
-        <p class="display-status">...loading</p>
+        <p class="display-status">Refresh to see all leaders scores</p>
         <ul class="player-scores-container"></ul>
       </div>
     </section>
@@ -37,14 +37,14 @@
         <label for="add-score">
           <input type="text" name="add-score" id="add-score" placeholder="Your score">
         </label>
-        <p class="input-msg">Error</p>
+        <p class="input-msg"></p>
         <button type="submit" class="submit-score">Submit</button>
       </form>
     </section>
   </main>
 
   <footer class="f-container">
-    <p class="footer-details">Mancoba Sihlongonyane &copy<span>date</span></p>
+    <p class="footer-details">Mancoba Sihlongonyane &copy<span class="footer-date"></span></p>
   </footer>
 
   <script src="../dist/main.js"></script>

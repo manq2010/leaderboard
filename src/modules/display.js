@@ -1,21 +1,21 @@
-import Leader from './player.js';
+// import Leader from './player.js';
 
 const playersContainer = document.querySelector('.player-scores-container');
 
-const playerMarkUp = () => {
+const playerMarkUp = (leader) => {
     const liMarkup = `
           <li class="player-details">
-          <p>${Leader.name}: ${Leader.score}</p>
+          <p>${leader.name}: ${leader.score}</p>
           </li>
           `;
     playersContainer.appendChild(liMarkup);
 };
 
-const display = (players, callback) => {
+const display = (players, leader, callback) => {
     player.forEach(() => {
         for (const player of players) {
             if (callback(player)) {
-                playerMarkUp()
+                playerMarkUp(leader);
             }
         }
     });

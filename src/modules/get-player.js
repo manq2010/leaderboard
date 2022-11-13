@@ -6,7 +6,8 @@ const getPlayers = () => {
     if (localStorage.getItem('players') === null) players = [];
     else players = JSON.parse(localStorage.getItem('players'));
 
-    return players;
+
+    return 'test';
 };
 
 export default getPlayers;
