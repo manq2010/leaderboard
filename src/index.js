@@ -6,6 +6,10 @@ const addBtn = document.querySelector('form');
 const addName = document.getElementById('add-name');
 const addScore = document.getElementById('add-score');
 const regex = /^[0-9]+$/;
+const refreshBtn = document.querySelector('.refresh-btn');
+const displayStatus = document.querySelector('.display-status');
+const inputMsg = document.querySelector('.input-msg');
+const playersContainer = document.querySelector('.player-scores-container');
 
 const clearScoresInputs = () => {
   const addName = document.getElementById('add-name');
@@ -14,9 +18,40 @@ const clearScoresInputs = () => {
   addScore.value = '';
 };
 
-const inputMsg = document.querySelector('.input-msg');
+const getPlayers = () => {
+  playersContainer.innerHTML = '';
+  let players;
+  if (localStorage.getItem('players') === null) players = [];
+  else players = JSON.parse(localStorage.getItem('players'));
+  return players;
+};
 
-// console.log(addBtn);
+const addPlayerToLocalStorage = (player) => {
+  const players = getPlayers();
+  players.push(player);
+  localStorage.setItem('players', JSON.stringify(players));
+};
+
+const addPlayer = (player) => {
+  addPlayerToLocalStorage(player);
+};
+
+const playerMarkUp = (leader) => {
+  const liMarkup = document.createElement('li');
+  liMarkup.classList.add('player-details');
+  liMarkup.innerHTML = `<p>${leader.name} : ${leader.score}</p>`;
+  playersContainer.appendChild(liMarkup);
+};
+
+const display = () => {
+  playersContainer.style.display = 'block';
+  displayStatus.innerHTML = '';
+  const players = getPlayers();
+  players.forEach((player) => {
+    playerMarkUp(player);
+  });
+};
+
 addBtn.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -40,54 +75,9 @@ addBtn.addEventListener('submit', (e) => {
   }, 2000);
 });
 
-const addPlayer = (player) => {
-  addPlayerToLocalStorage(player);
-};
-
-const addPlayerToLocalStorage = (player) => {
-  const players = getPlayers();
-  players.push(player);
-  localStorage.setItem('players', JSON.stringify(players));
-};
-
-const playersContainer = document.querySelector('.player-scores-container');
-
-const getPlayers = () => {
-  playersContainer.innerHTML = '';
-  let players;
-  if (localStorage.getItem('players') === null) players = [];
-  else players = JSON.parse(localStorage.getItem('players'));
-  return players;
-};
-
-const playerMarkUp = (leader) => {
-  const liMarkup = document.createElement('li');
-  liMarkup.classList.add('player-details');
-  liMarkup.innerHTML = `<p>${leader.name} : ${leader.score}</p>`;
-  playersContainer.appendChild(liMarkup);
-};
-
-const display = () => {
-  const players = getPlayers();
-  players.forEach((player) => {
-    playerMarkUp(player);
-  });
-};
-
-// callback function
-// display(getPlayers, Leader, (x) => x);
-
-const refreshBtn = document.querySelector('.refresh-btn');
-const displayStatus = document.querySelector('.display-status');
-
 refreshBtn.addEventListener('click', () => {
-  displayStatus.innerHTML = '';
   display();
 });
-
-// window.document.addEventListener('DOMContentLoaded', () => {
-//     // display();
-// });
 
 const footerDate = document.querySelector('.footer-date');
 const date = new Date();
