@@ -42,10 +42,6 @@ body {
   display: none;
 }
 
-input {
-  width: 100%;
-}
-
 .f-container {
   position: fixed;
   bottom: 0;
@@ -64,6 +60,7 @@ input {
 input {
   height: 1.5rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 @media (min-width: 576px) {
