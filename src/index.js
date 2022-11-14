@@ -1,56 +1,16 @@
 import _ from 'lodash'; // eslint-disable-line
 import './style.css';
 import Leader from './modules/player.js';
+import display from './modules/display.js';
+import clearScoresInputs from './modules/clear-inputs.js';
+import addPlayer from './modules/add-player.js';
 
 const addBtn = document.querySelector('form');
 const addName = document.getElementById('add-name');
 const addScore = document.getElementById('add-score');
 const regex = /^[0-9]+$/;
 const refreshBtn = document.querySelector('.refresh-btn');
-const displayStatus = document.querySelector('.display-status');
 const inputMsg = document.querySelector('.input-msg');
-const playersContainer = document.querySelector('.player-scores-container');
-
-const clearScoresInputs = () => {
-  const addName = document.getElementById('add-name');
-  const addScore = document.getElementById('add-score');
-  addName.value = '';
-  addScore.value = '';
-};
-
-const getPlayers = () => {
-  playersContainer.innerHTML = '';
-  let players;
-  if (localStorage.getItem('players') === null) players = [];
-  else players = JSON.parse(localStorage.getItem('players'));
-  return players;
-};
-
-const addPlayerToLocalStorage = (player) => {
-  const players = getPlayers();
-  players.push(player);
-  localStorage.setItem('players', JSON.stringify(players));
-};
-
-const addPlayer = (player) => {
-  addPlayerToLocalStorage(player);
-};
-
-const playerMarkUp = (leader) => {
-  const liMarkup = document.createElement('li');
-  liMarkup.classList.add('player-details');
-  liMarkup.innerHTML = `<p>${leader.name} : ${leader.score}</p>`;
-  playersContainer.appendChild(liMarkup);
-};
-
-const display = () => {
-  playersContainer.style.display = 'block';
-  displayStatus.innerHTML = '';
-  const players = getPlayers();
-  players.forEach((player) => {
-    playerMarkUp(player);
-  });
-};
 
 addBtn.addEventListener('submit', (e) => {
   e.preventDefault();
