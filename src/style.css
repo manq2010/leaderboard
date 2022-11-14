@@ -1,7 +1,93 @@
-body {
-    background-color: bisque;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:ital,wght@0,400;0,500;1,500&family=Raleway:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.hello {
-    color: red;
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
+
+.h-container {
+  padding: 2rem 0 0 2rem;
+}
+
+.m-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.scores-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.player-scores-container {
+  margin-top: 1rem;
+  list-style: none;
+  border: 1px #d3d3d3 solid;
+  overflow-y: scroll;
+  height: 12rem;
+  display: none;
+}
+
+.f-container {
+  position: fixed;
+  bottom: 0;
+  background: #d3d3d3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+.add-scores-title {
+  margin-bottom: 1rem;
+}
+
+input {
+  height: 1.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .m-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .scores-container {
+    width: 90%;
+  }
+
+  .refresh-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .player-scores-container {
+    height: 20rem;
+  }
+
+  .add-scores-title {
+    margin-bottom: 3rem;
+  }
+
+  input {
+    height: 2rem;
+    margin-bottom: 1.5rem;
+  }
 }
