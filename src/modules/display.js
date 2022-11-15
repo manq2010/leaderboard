@@ -7,14 +7,17 @@ import getPlayers from './get-players.js';
 const displayStatus = document.querySelector('.display-status');
 const playersContainer = document.querySelector('.player-scores-container');
 
-const display = () => {
+const display = async () => {
+  displayStatus.innerHTML = '...loading';
+  const players = await getPlayers();
   playersContainer.style.display = 'block';
   displayStatus.innerHTML = '';
-  const players = getPlayers();
+
+
+  // console.log(players);
   players.forEach((player) => {
     playerMarkUp(player);
   });
-  console.log('test');
 };
 
 export default display;

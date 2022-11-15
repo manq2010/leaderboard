@@ -9,6 +9,8 @@ import renderHome from './modules/home.js';
 import renderContact from './modules/contact.js';
 import renderFooter from './modules/footer.js';
 
+import getPlayers from './modules/get-players.js';
+
 const addBtn = document.querySelector('form');
 const addName = document.getElementById('add-name');
 const addScore = document.getElementById('add-score');
@@ -19,6 +21,8 @@ const inputMsg = document.querySelector('.input-msg');
 renderNavigation();
 // renderHome();
 renderFooter();
+
+// getPlayers();
 
 const navLinks = document.querySelectorAll('.nav-link');
 const mainContainer = document.querySelector('.m-container');
@@ -80,6 +84,5 @@ addBtn.addEventListener('submit', (e) => {
 });
 
 refreshBtn.addEventListener('click', () => {
-  setTimeout((display()), 2000);
-  // display();
+  display();
 });

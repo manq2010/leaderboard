@@ -1,8 +1,8 @@
-import getPlayers from './get-players.js';
-
 const KEY = 'Zl4d7IVkemOTTVg2fUdz';
-const URL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${KEY}/scores/`;
 
+// const KEY = 'CHyVgSSlCdeVKzppH4U1';
+const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
+const URL = `${BASE_URL}/games/${KEY}/scores/`;
 
 // const addPlayerToLocalStorage = (player) => {
 //   const players = getPlayers();
@@ -11,7 +11,6 @@ const URL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/game
 // };
 
 const addPlayerToAPI = (player) => {
-
   fetch(URL, {
     method: 'POST', // or 'PUT'
     headers: {
@@ -25,7 +24,6 @@ const addPlayerToAPI = (player) => {
     .then((response) => {
       const players = response.json();
       return players;
-      
     })
     .then((player) => {
       console.log('Success:', player.result);
@@ -35,10 +33,6 @@ const addPlayerToAPI = (player) => {
     });
 }
 
-const addPlayer = (player) => {
-  // addPlayerToLocalStorage(player);
-  console.log(player)
-  addPlayerToAPI(player);
-};
+const addPlayer = (player) => addPlayerToAPI(player);
 
 export default addPlayer;
