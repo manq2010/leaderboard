@@ -1,4 +1,4 @@
-const mainContainer = document.querySelector('.m-container');
+const mainContainer = document.querySelector('.m-container2');
 
 const contactMarkUp = `
 <div class="container">

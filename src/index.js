@@ -17,11 +17,12 @@ const refreshBtn = document.querySelector('.refresh-btn');
 const inputMsg = document.querySelector('.input-msg');
 
 renderNavigation();
-renderHome();
+// renderHome();
 renderFooter();
 
 const navLinks = document.querySelectorAll('.nav-link');
 const mainContainer = document.querySelector('.m-container');
+const mainContainer2 = document.querySelector('.m-container2');
 
 const renderPage = (location, page) => {
   location.innerHTML = '';
@@ -41,13 +42,21 @@ navLinks.forEach((link) => {
     if (e.target.textContent === 'Home') {
       removeActive();
       e.target.classList.add('active');
-      renderPage(mainContainer, renderHome);
+      // renderPage(mainContainer, renderHome);
+
+      if (window.screen.width < 576) {
+        mainContainer.style.display = 'flex';
+      } else {
+        mainContainer.style.display = 'grid';
+      }
+      mainContainer2.innerHTML = '';
     }
 
     if (e.target.textContent === 'Contact') {
       removeActive();
       e.target.classList.add('active');
-      renderPage(mainContainer, renderContact);
+      renderPage(mainContainer2, renderContact);
+      mainContainer.style.display = 'none';
     }
   });
 });
@@ -72,7 +81,7 @@ addBtn.addEventListener('submit', (e) => {
   }
   setTimeout(() => {
     inputMsg.innerHTML = '';
-  }, 2000);
+  }, 3000);
 });
 
 refreshBtn.addEventListener('click', () => {

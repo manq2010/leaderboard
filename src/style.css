@@ -52,6 +52,11 @@ body {
   flex-direction: column;
 }
 
+.m-container2 {
+  display: flex;
+  justify-content: center;
+}
+
 .scores-container {
   display: flex;
   flex-direction: column;
@@ -63,7 +68,7 @@ body {
   list-style: none;
   border: 1px #d3d3d3 solid;
   overflow-y: scroll;
-  height: 12rem;
+  height: 5rem;
   display: none;
 }
 
@@ -104,7 +109,7 @@ input {
   }
 
   .player-scores-container {
-    height: 20rem;
+    height: 15rem;
   }
 
   .add-scores-title {
