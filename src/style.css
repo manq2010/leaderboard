@@ -17,14 +17,53 @@ body {
   height: 100vh;
 }
 
+.nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  border-bottom: #236dcf 1px solid;
+  background: #d3d3d3;
+  color: #236dcf;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #236dcf;
+}
+
+.contact-link,
+.active {
+  color: #d136f7eb;
+}
+
+.player-details {
+  padding-left: 0.3rem;
+}
+
+.details {
+  margin-top: 2rem;
+}
+
 .h-container {
-  padding: 2rem 0 0 2rem;
+  padding: 1rem 0 0 2rem;
 }
 
 .m-container {
   padding: 2rem;
   display: flex;
   flex-direction: column;
+}
+
+.title-contact {
+  margin-bottom: 1rem;
+}
+
+.m-container2 {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
 }
 
 .scores-container {
@@ -38,7 +77,7 @@ body {
   list-style: none;
   border: 1px #d3d3d3 solid;
   overflow-y: scroll;
-  height: 12rem;
+  height: 5rem;
   display: none;
 }
 
@@ -63,6 +102,10 @@ input {
   width: 100%;
 }
 
+.diplay-none {
+  display: none;
+}
+
 @media (min-width: 576px) {
   .m-container {
     display: grid;
@@ -79,7 +122,7 @@ input {
   }
 
   .player-scores-container {
-    height: 20rem;
+    height: 15rem;
   }
 
   .add-scores-title {
@@ -89,5 +132,9 @@ input {
   input {
     height: 2rem;
     margin-bottom: 1.5rem;
+  }
+
+  .diplay-none {
+    display: none;
   }
 }
