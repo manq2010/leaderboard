@@ -24,6 +24,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 const mainContainer = document.querySelector('.m-container');
 const mainContainer2 = document.querySelector('.m-container2');
 
+// callback function
 const renderPage = (location, page) => {
   location.innerHTML = '';
   page();
@@ -42,13 +43,7 @@ navLinks.forEach((link) => {
     if (e.target.textContent === 'Home') {
       removeActive();
       e.target.classList.add('active');
-      // renderPage(mainContainer, renderHome);
-
-      if (window.screen.width < 576) {
-        mainContainer.style.display = 'flex';
-      } else {
-        mainContainer.style.display = 'grid';
-      }
+      mainContainer.classList.remove('diplay-none');
       mainContainer2.innerHTML = '';
     }
 
@@ -56,7 +51,7 @@ navLinks.forEach((link) => {
       removeActive();
       e.target.classList.add('active');
       renderPage(mainContainer2, renderContact);
-      mainContainer.style.display = 'none';
+      mainContainer.classList.add('diplay-none');
     }
   });
 });
@@ -85,5 +80,6 @@ addBtn.addEventListener('submit', (e) => {
 });
 
 refreshBtn.addEventListener('click', () => {
-  display();
+  setTimeout((display()), 2000);
+  // display();
 });

@@ -93,6 +93,10 @@ input {
   width: 100%;
 }
 
+.diplay-none {
+  display: none;
+}
+
 @media (min-width: 576px) {
   .m-container {
     display: grid;

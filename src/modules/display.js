@@ -14,6 +14,7 @@ const display = () => {
   players.forEach((player) => {
     playerMarkUp(player);
   });
+  console.log('test');
 };
 
 export default display;
