@@ -1,6 +1,4 @@
-const KEY = 'Zl4d7IVkemOTTVg2fUdz';
-
-// const KEY = 'CHyVgSSlCdeVKzppH4U1';
+const KEY = 'ogEBHq5P32FHEDzPh5SP';
 const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 const URL = `${BASE_URL}/games/${KEY}/scores/`;
 

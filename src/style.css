@@ -38,12 +38,16 @@ body {
   color: #d136f7eb;
 }
 
+.player-details {
+  padding-left: 0.3rem;
+}
+
 .details {
   margin-top: 2rem;
 }
 
 .h-container {
-  padding: 2rem 0 0 2rem;
+  padding: 1rem 0 0 2rem;
 }
 
 .m-container {
@@ -52,7 +56,12 @@ body {
   flex-direction: column;
 }
 
+.title-contact {
+  margin-bottom: 1rem;
+}
+
 .m-container2 {
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
 }
@@ -123,5 +132,9 @@ input {
   input {
     height: 2rem;
     margin-bottom: 1.5rem;
+  }
+
+  .diplay-none {
+    display: none;
   }
 }

@@ -5,11 +5,8 @@ import display from './modules/display.js';
 import clearScoresInputs from './modules/clear-inputs.js';
 import addPlayer from './modules/add-player.js';
 import renderNavigation from './modules/nav.js';
-import renderHome from './modules/home.js';
 import renderContact from './modules/contact.js';
 import renderFooter from './modules/footer.js';
-
-import getPlayers from './modules/get-players.js';
 
 const addBtn = document.querySelector('form');
 const addName = document.getElementById('add-name');
@@ -19,10 +16,7 @@ const refreshBtn = document.querySelector('.refresh-btn');
 const inputMsg = document.querySelector('.input-msg');
 
 renderNavigation();
-// renderHome();
 renderFooter();
-
-// getPlayers();
 
 const navLinks = document.querySelectorAll('.nav-link');
 const mainContainer = document.querySelector('.m-container');
@@ -60,6 +54,8 @@ navLinks.forEach((link) => {
   });
 });
 
+const displayStatus = document.querySelector('.display-status');
+
 addBtn.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -68,9 +64,15 @@ addBtn.addEventListener('submit', (e) => {
   if (name && score) {
     if (regex.test(score)) {
       const player = new Leader(name, score);
-      addPlayer(player);
+
+      addPlayer(player).then(
+        displayStatus.innerHTML = 'New leader score added!',
+        setTimeout(() => {
+          displayStatus.innerHTML = '';
+        }, 4000),
+      );
+
       clearScoresInputs();
-      display();
     } else {
       clearScoresInputs();
       inputMsg.innerHTML = 'Score should be a number';

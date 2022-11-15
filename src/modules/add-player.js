@@ -1,18 +1,12 @@
-const KEY = 'Zl4d7IVkemOTTVg2fUdz';
+import display from './display.js';
 
-// const KEY = 'CHyVgSSlCdeVKzppH4U1';
+const KEY = 'ogEBHq5P32FHEDzPh5SP';
 const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 const URL = `${BASE_URL}/games/${KEY}/scores/`;
 
-// const addPlayerToLocalStorage = (player) => {
-//   const players = getPlayers();
-//   players.push(player);
-//   localStorage.setItem('players', JSON.stringify(players));
-// };
-
 const addPlayerToAPI = (player) => {
   fetch(URL, {
-    method: 'POST', // or 'PUT'
+    method: 'POST',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
@@ -23,16 +17,26 @@ const addPlayerToAPI = (player) => {
   })
     .then((response) => {
       const players = response.json();
+      display();
       return players;
     })
-    .then((player) => {
-      console.log('Success:', player.result);
+    .then(() => {
+      // console.log('Success:', player.result);
     })
-    .catch((player) => {
-      console.error('Error:', player);
+    .catch(() => {
+      // console.error('Error:', player);
     });
-}
+};
 
-const addPlayer = (player) => addPlayerToAPI(player);
+const addPlayer = (player) => new Promise((resolve, reject) => {
+  addPlayerToAPI(player);
+  const error = false;
+
+  if (!error) {
+    resolve();
+  } else {
+    reject(Error, 'something went wrong');
+  }
+});
 
 export default addPlayer;

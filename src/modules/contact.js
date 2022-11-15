@@ -1,7 +1,7 @@
 const mainContainer = document.querySelector('.m-container2');
 
 const contactMarkUp = `
-<div class="container">
+<div class="c-container">
     <h2 class="title-contact">Contact Me</h2>
     <h4>Reach out to me if you are amazed</h4>
     <p class="details">
