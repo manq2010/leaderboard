@@ -1,9 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Leaderboard
 
-> Description the project.
-
+> The leaderboard website displays scores submitted by different players. It also allows you to submit your score.
 
 ## Built With
 
@@ -11,9 +10,9 @@
 - CSS
 - JavaScript
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link for Leaderboard](https://mancobasihlongonyane.me/leaderboard/)
 
 
 ## Getting Started
@@ -32,7 +31,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 ```
-git clone git@github.com:<username>/<repo>.git
+git clone git@github.com:manq2010/leaderboard.git
 ```
 
 ### Install
@@ -40,6 +39,12 @@ git clone git@github.com:<username>/<repo>.git
 ### Usage
 
 * open the index.html file in the browser
+* run the following steps
+
+```
+npm install
+npm start
+```
 
 ### Run tests
 
@@ -67,23 +72,16 @@ npx eslint .
 ```
 
 ### Deployment
+
 * This project is deployed with Github pages.
-
-
 
 ## Authors
 
-👤 **Author1**
+👤 **Mancoba Sihlongonyane**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/manq2010/)
+- Twitter: [@twitterhandle](https://twitter.com/mancoba_c/)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mancobasihlongonyane/)
 
 ## 🤝 Contributing
 
@@ -97,9 +95,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thanks for my coding partners to assisting with concepts of API
 
 ## 📝 License
 
