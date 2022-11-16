@@ -33,6 +33,30 @@ body {
   color: #236dcf;
 }
 
+.date-show {
+  margin-top: 0.5rem;
+  color: #236dcf;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0 1rem 0 1rem;
+  animation-duration: 10s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 70%;
+    color: #236dcf;
+  }
+
+  to {
+    margin-left: 0%;
+    color: #d136f7eb;
+  }
+}
+
 .contact-link,
 .active {
   color: #d136f7eb;
@@ -42,12 +66,34 @@ body {
   padding-left: 0.3rem;
 }
 
+.player-details-p {
+  display: grid;
+  grid-template-columns: 1.5fr 1rem 1fr;
+}
+
+.player-details:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+button {
+  height: 2rem;
+  width: 4rem;
+  background-color: #d3d3d3;
+  border: 1px solid #236dcf;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  border: 2px solid #d136f7eb;
+  opacity: 0.7;
+}
+
 .details {
   margin-top: 2rem;
 }
 
 .h-container {
-  padding: 1rem 0 0 2rem;
+  padding: 0.5rem 0 0 2rem;
 }
 
 .m-container {
@@ -100,6 +146,11 @@ input {
   height: 1.5rem;
   margin-bottom: 1rem;
   width: 100%;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
 }
 
 .diplay-none {
@@ -110,6 +161,10 @@ input {
   .m-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
+  }
+
+  .date-show {
+    animation-duration: 15s;
   }
 
   .scores-container {

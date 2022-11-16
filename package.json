@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/manq2010/webpack-exercise/issues"
   },
-  "homepage": "https://github.com/manq2010/webpack-exercise#readme",
+  "homepage": "https://github.com/manq2010/leaderboard",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.19.6",
     "babel-eslint": "^10.1.0",

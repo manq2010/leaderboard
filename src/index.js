@@ -7,6 +7,7 @@ import addPlayer from './modules/add-player.js';
 import renderNavigation from './modules/nav.js';
 import renderContact from './modules/contact.js';
 import renderFooter from './modules/footer.js';
+import renderCurrentTime from './modules/date.js';
 
 const addBtn = document.querySelector('form');
 const addName = document.getElementById('add-name');
@@ -16,6 +17,10 @@ const refreshBtn = document.querySelector('.refresh-btn');
 const inputMsg = document.querySelector('.input-msg');
 
 renderNavigation();
+// setInterval(renderCurrentTime, 1000);
+setInterval(() => {
+  renderCurrentTime();
+}, 1000);
 renderFooter();
 
 const navLinks = document.querySelectorAll('.nav-link');
